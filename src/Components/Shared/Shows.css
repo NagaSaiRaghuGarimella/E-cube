@@ -1,0 +1,39 @@
+.shows {
+  width: 85vw;
+  margin: auto;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  line-height: 1.5;
+  overflow: auto;
+}
+
+.shows::-webkit-scrollbar {
+  /* height: 0; */
+}
+
+.shows img {
+  width: 220px;
+  border-radius: 10px;
+}
+
+.rnd-button {
+  height: 50px;
+  width: 50px;
+  padding: 15px 10px;
+  border-radius: 50%;
+}
+
+.Moives-Section {
+  position: relative;
+}
+
+.movieBtn1 {
+  position: relative;
+  top: 200px;
+}
+.movieBtn2 {
+  position: relative;
+  bottom: 304px;
+  left: 1070px;
+}
