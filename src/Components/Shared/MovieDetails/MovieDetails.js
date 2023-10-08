@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import {BsPlay} from 'react-icons/bs';
+import {MdStarRate} from 'react-icons/md'
 
 const MoviesList = [
   {
@@ -33,20 +34,42 @@ function MovieDetails() {
   const movieDetails = MoviesList.filter((movie) => movie._id === userId);
   const { name, language, rate, type, imageUrl } = movieDetails[0];
   return (
-    <div>
-      <div className = "ralative">
-        <h1 className="text-2xl font-bold">Movie Details</h1>
-        <img className="w-screen h-screen" src={imageUrl} alt="" />
-        <div className="absolute top-[65%] ml-40">
-          <h1 className="text-3xl font-mono font-extrabold">{name}</h1>
-          <p className="text-xl font-bold">9th Sep</p>
-          <p className="font-semibold">2hr 41min</p>
-          <p className="font-extrabold text-white">{rate} <span className="text-yellow-500 text-xl font-bold">***</span></p>
+
+    <div className="h-screen w-full bg-sky-400" >
+      <div className="mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
+        <div className="">
+         <img className="w-full" src={imageUrl} alt="" />
         </div>
-        <p className=" absolute border text-white font-semibold text-xl flex items-center rounded-md p-1 hover:bg-black top-[85%] mx-40"><BsPlay className="text-2xl"/>Trailer</p>
+        <div className="flex flex-col">
+         <div className="flex justify-between">
+           <p>Death Wish</p>
+           <p>9th Sep</p>
+         </div>
+         <p>Run Time : 2h 41min</p>
+         <p><MdStarRate/>{rate}/5</p>
+         <p><BsPlay/>Trailer</p>
+        </div>
       </div>
-      <button className=" absolute top-[95%] text-white bg-red-500 p-1 rounded-md mx-40 hover:scale-105">Book Tickets</button>
+      <button>Book Tickets</button>
     </div>
+    // <div className="h-screen w-full">
+    // <div className="max-w-screen-lg flex items-center justify-center h-full px-4 md:flex-row">
+    //   <div className = "">
+    //     {/* <h1 className="text-2xl font-bold">Movie Details</h1> */}
+    //     <img className="w-3/5" src={imageUrl} alt="" />
+    //     </div>
+    //     <div className=" flex flex-col justify-center h-full">
+    //       <div className="flex items-center">
+    //       <h1 className="text-5xl font-mono font-extrabold">{name}</h1>
+    //       <p className="text-3xl font-bold ml-20">9th Sep</p>
+    //       </div>
+    //       <p className="text-2xl text-center font-semibold mt-10">Run Time : 2hr 41min</p>
+    //       <p className="font-extrabold flex items-center mx-56 mt-10"><MdStarRate className="text-2xl font-bold"/>{rate} <span className="font-bold">/5</span></p>
+    //       <p className="border border-blue-600 font-semibold text-xl flex items-center rounded-md p-1 hover:bg-slate-300 mx-56 mt-10 w-24"><BsPlay className="text-2xl"/>Trailer</p>
+    //   </div>
+    //   </div>
+    //   <button className="text-white bg-red-500 p-1 rounded-md mx-56 my-3 w-44 hover:scale-105">Book Tickets</button>
+    // </div>
   );
 }
 export default MovieDetails;

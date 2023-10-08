@@ -1,0 +1,14 @@
+.noOfTickets {
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .noOfTickets button {
+    padding: 2px 20px;
+    font-size: 20px;
+    background-color: transparent;
+    border: 1px solid #2b2a2a;
+  }
